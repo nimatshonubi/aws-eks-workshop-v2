@@ -37,6 +37,10 @@ VPC_ID=${module.cluster.vpc_id}
 VPC_PRIVATE_SUBNET_ID_0=${module.cluster.private_subnet_ids[0]}
 VPC_PRIVATE_SUBNET_ID_1=${module.cluster.private_subnet_ids[1]}
 VPC_PRIVATE_SUBNET_ID_2=${module.cluster.private_subnet_ids[2]}
+AIML_DL_IMAGE=763104351884.dkr.ecr.${data.aws_region.current.name}.amazonaws.com/pytorch-inference-neuron:1.12.1-neuron-py38-sdk2.5.0-ubuntu20.04
+AIML_NEURON_BUCKET_NAME=${module.cluster.aiml_neuron_s3_bucket_name}
+AIML_NEURON_ROLE_ARN=${module.cluster.aiml_neuron_role_arn}
+
 GITOPS_IAM_SSH_KEY_ID=${module.cluster.gitops_iam_ssh_key_id}
 GITOPS_IAM_SSH_USER=${module.cluster.gitops_ssh_iam_user}
 GITOPS_SSH_SSM_NAME=${module.cluster.gitops_ssh_ssm_name}
